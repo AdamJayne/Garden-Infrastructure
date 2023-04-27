@@ -1,0 +1,17 @@
+name: "CI"
+run-name: "{{ github.actor }} is deploying infrastructure!"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Testing-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world!"
+  Testing-Linear-Job:
+    runs-on: ubuntu-latest
+    needs: Testing-Actions
+    steps:
+      - run: echo "I ran second!"
