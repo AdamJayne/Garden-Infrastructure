@@ -8,7 +8,7 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
+      - name: Check_out_code
         uses: actions/checkout@v3
 
       - name: Cleanup

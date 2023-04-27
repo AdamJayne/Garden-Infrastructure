@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Cache node modules
+      - name: Cache_node_modules
         id: Cache node modules
         uses: actions/cache@v3
         env:
@@ -29,7 +28,7 @@ jobs:
         continue-on-error: true
         run: npm list
 
-      - name: Install Dependencies
+      - name: Install_Dependencies
         run: npm install
 
       - name: Build
