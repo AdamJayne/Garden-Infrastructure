@@ -4,6 +4,7 @@ runs:
   using: "composite"
   steps:
     - name: Cache node modules
+      shell: bash
       id: cache-npm
       uses: actions/cache@v3
       env:
@@ -17,6 +18,7 @@ runs:
           ${{ runner.os }}-
 
     - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+      shell: bash
       name: List the state of node modules
       continue-on-error: true
       run: npm list
